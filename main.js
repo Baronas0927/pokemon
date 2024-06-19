@@ -1,9 +1,9 @@
 let ballsWeHave = 5;
 
 const apiUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
-const pokemon = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png';
+const pokemonData = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png';
 
-fetch(apiUrl)
+github-fetch(apiUrl)
     .then(response => {
         if(!response.ok){
             throw new Error('Network was not okay');
@@ -88,4 +88,3 @@ async function fetchPokemon(rndPokeNo){
         }
     };
 }
-document.querySelector("#btn").addEventListener("click", playGame);
