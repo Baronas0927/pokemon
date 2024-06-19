@@ -1,10 +1,14 @@
 body, body *{
     text-align: center;
 }
+body{
+    background-image: url(pokemon-ball-house-anime-digital-art-hd-wallpaper-uhdpaper.com-68@1@o.jpg); 
+    background-size:cover;
+}
 .mtlg{
     margin-top: 100px;
+    
 }
-
 #pokemon-container{
     height: 300px;
 }
@@ -13,4 +17,7 @@ pokemon{
     height: 200px;
     width: 150px;
     background-color: blue;
+}
+#pokeball{
+    width: 100px;
 }

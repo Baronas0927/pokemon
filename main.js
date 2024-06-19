@@ -1,9 +1,9 @@
 let ballsWeHave = 5;
 
 const apiUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
-const pokemonData = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png';
+const pokemonData = 'https://www.thewandcompany.com/wp-content/uploads/2020/11/hand-holding-pokeball-lit-2kx2437px-840x1024.jpg';
 
-github-fetch(apiUrl)
+fetch(apiUrl)
     .then(response => {
         if(!response.ok){
             throw new Error('Network was not okay');
@@ -31,7 +31,7 @@ async function playGame(){
     switch(gameStatus.value){
         case "1":
             document.querySelector("#btn-container").innerHTML = '<button class="btn btn-info" id="btn">pagauk pokemona!</button>';
-            document.querySelector("#pokemon-container").innerHTML = '<div id="pokemon"></div>';
+            document.querySelector("#pokemon-container").innerHTML = '<div id="pokemon"></div> <img src=" ' + pokemon.photo + '">';
             gameStatus.value = 2;
             break;
         case "2":
@@ -55,7 +55,7 @@ async function playGame(){
             }
             break;
         case "3":
-            document.querySelector("#pokemon").innerHTML = '<h1>Pokemonas</h1> <img src="${pokemon}">';
+            document.querySelector("#pokemon").innerHTML = '<h1>Pokemonas</h1> <img id="pokeball" src="' + pokemonData + '">';
             document.querySelector("#btn-container").innerHTML = "";
             gameStatus.value = 3;
             break;
@@ -88,3 +88,4 @@ async function fetchPokemon(rndPokeNo){
         }
     };
 }
+document.querySelector("#btn").addEventListener("click", playGame);
